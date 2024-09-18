@@ -1,0 +1,214 @@
+@import url('../settings/styles.css');
+
+.settings__block__item_unselectable {
+    position: relative;
+
+    background-color: #303030;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.dropboxItem {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.dropboxItem > select {
+    width: 100%;
+
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.dropboxItem > select:hover {
+    background-color: #383838;
+    cursor: pointer;
+}
+
+.dropboxItem > option {
+    accent-color: red;
+    background-color: #303030;
+}
+
+.dropboxItem > button {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+}
+
+.dropboxItem > button:hover {
+    background-color: #383838;
+    cursor: pointer;
+}
+
+.createConfigBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.createConfigBlock > input {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+
+    width: 100%;
+}
+
+.createConfigBlock > input:hover, .createConfigBlock > input:focus {
+    background-color: #383838;
+}
+
+.createConfigBlock > button {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.createConfigBlock > button:hover {
+    background-color: #383838;
+}
+
+.config__param {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+    justify-self: center;
+    align-items: center;
+
+    background-color: #303030;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.config__param__value {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-self: center;
+    width: 100%;
+}
+
+.config__param__value > h1 {
+    margin: 0px;
+
+    font-weight: 300;
+    font-size: 14px;
+    color: #fff;
+}
+
+.config__param__value > span {
+    margin: 0px;
+
+    font-weight: 400;
+    font-size: 12px;
+    color: #ffffff5e;
+}
+
+.config__param__value > input {
+    width: 100%;
+    background-color: #3C3C3C;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+
+    width: 100%;
+}
+
+.config__param__value > input:hover, .config__param__value > input:focus {
+    background-color: #444444;
+}
+
+.controlConfigBlock {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.controlConfigBlock > input {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+
+    width: 100%;
+}
+
+.controlConfigBlock > input:hover, .controlConfigBlock > input:focus {
+    background-color: #383838;
+}
+
+.controlConfigBlock > button {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.config__param input {
+    accent-color: white;
+}
+
+.info__block > h1{
+    margin: 6px 0px;
+
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+}
+
+.info__block > h2 {
+    margin: 6px 0px;
+
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+}
+
+.info__block > span {
+    font-weight: 500;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.info__block a, .info__block a:visited {
+    color: white;
+}

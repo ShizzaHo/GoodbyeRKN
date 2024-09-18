@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <main class="main">
+            <header class="main__header">
+                GoodbyeRKN | <a href="../../views/settings/index.html">Настройки</a> > Настройки и конфиги GoodbyeDPI
+            </header>
+
+            <div class="settings">
+                <div class="settings__block">
+                    <h1>Конфиги</h1>
+                    <div class="dropboxItem">
+                        <select id="config-list">
+                            <option value="new">
+                                - Создание нового конфига -
+                            </option>
+                        </select>
+                        <button id="config-openFolder">Открыть папку</button>
+                        <button id="config-selectConfig">Применить конфиг</button>
+                    </div>
+                </div>
+
+                <div class="settings__block" id="config-new">
+                    <h1>Создание нового конфига</h1>
+                    <div>
+                        <div class="createConfigBlock">
+                            <input id="createConfig-name" placeholder="Название файла конфига" />
+                            <input id="createConfig-desc" placeholder="Описание конфига" />
+                            <button  id="createConfig-create">Создать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings__block" id="config-edit">
+                    <h1>Конфигуратор</h1>
+                    <div style="display: none;">
+                        <span>Не выбран конфиг, либо произошла ошибка</span>
+                    </div>
+                    <div>
+                        <div class="controlConfigBlock">
+                            <input id="editConfig-desc" placeholder="Описание конфига" />
+                            <button id="editConfig-save">Сохранить изменения</button>
+                        </div>
+                        <div id="config-data">
+                            <div class="config__param">
+                                <div>
+                                    <input type="checkbox" id="">
+                                </div>
+                                <div class="config__param__value">
+                                    <h1>-p</h1>
+                                    <span>desc</span>
+                                    <input placeholder="value" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings__block info__block">
+                    <h1>Справка по конфигурации</h1>
+
+                    <h1>Быстрые команды</h1>
+                    <span>Вы можете вписать специальные значения в поля value для упрощения конфигурации (можно выделять мышкой)</span>
+
+                    <h2 style="user-select: all;">%included%</h2>
+                    <span>Ищет в папке конфимгурации .txt файл с аналогичным названием как у конфига</span>
+
+                    <h1>Полная справка по аргументам</h1>
+                    <span>Полная справка находится в официальном GitHub GoodbyeDPI <a href="https://github.com/ValdikSS/GoodbyeDPI" target="_blank">Жми сюда чтоб открыть репозиторий</a></span>
+                </div>
+            </div>
+        </main>
+
+        <script src="./logic.js"></script>
+    </body>
+</html>
