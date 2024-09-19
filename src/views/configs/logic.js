@@ -313,7 +313,7 @@ const configObjectDesc = [
         param: '<value>',
         value: 'Пользовательские аргмуенты, посмотреть можно в официальном github goodbyedpi (ValdikSS/GoodbyeDPI)',
     },
-]
+];
 
 let editableName = '';
 let editableConfig = null;
@@ -333,28 +333,18 @@ const updateConfigList = () => {
 };
 
 const getJsonFilesSync = (dir) => {
-    try {
-        const files = fs.readdirSync(dir);
-        const jsonFiles = files
-            .filter((file) => path.extname(file) === '.json')
-            .map((file) => path.join(dir, file));
+    const files = fs.readdirSync(dir);
+    const jsonFiles = files
+        .filter((file) => path.extname(file) === '.json')
+        .map((file) => path.join(dir, file));
 
-        return jsonFiles;
-    } catch (err) {
-        console.error('Error reading directory:', err);
-        return [];
-    }
+    return jsonFiles;
 };
 
 const getDescConfig = (filePath) => {
-    try {
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const config = JSON.parse(fileContent);
-        return config.desc || 'Описание отсутствует';
-    } catch (error) {
-        console.error(`Ошибка при чтении файла ${filePath}:`, error);
-        return 'Ошибка чтения файла';
-    }
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const config = JSON.parse(fileContent);
+    return config.desc || 'Описание отсутствует';
 };
 
 const onConfigSelect = (e) => {
@@ -423,7 +413,8 @@ const generateDomConfig = (config) => {
     configData.innerHTML = '';
     editableConfig = config;
 
-    document.getElementById('editConfig-desc').value = editableConfig.desc || '';
+    document.getElementById('editConfig-desc').value =
+        editableConfig.desc || '';
 
     editableConfig.params.map((item) => {
         configData.innerHTML += `<div class="config__param">
@@ -433,31 +424,37 @@ const generateDomConfig = (config) => {
                 <div class="config__param__value">
                     <h1>${item.param}</h1>
                     <span>${findParamDesc(item.param)}</span>
-                    <input placeholder="value" value="${item.value}" id="config-value-${item.param}" value="${item.value}" />
+                    <input placeholder="value" value="${
+                        item.value
+                    }" id="config-value-${item.param}" value="${item.value}" />
                 </div>
             </div>`;
 
-        setTimeout(() => { 
+        setTimeout(() => {
             handler.registerNewChange(`config-param-${item.param}`, (e) => {
                 changeParamActive(item.param, e);
             });
-    
+
             handler.registerNewChange(`config-value-${item.param}`, (e) => {
                 changeParamValue(item.param, e);
             });
 
-            document.getElementById(`config-param-${item.param}`).checked = item.active;
+            document.getElementById(`config-param-${item.param}`).checked =
+                item.active;
             console.log(item.param);
-            
-            document.getElementById(`config-value-${item.param}`).style.display = item.param.indexOf("<value>")  >= 0 ? 'block' : 'none';
+
+            document.getElementById(
+                `config-value-${item.param}`
+            ).style.display =
+                item.param.indexOf('<value>') >= 0 ? 'block' : 'none';
         }, 100);
     });
 };
 
 const findParamDesc = (paramName) => {
-    const config = configObjectDesc.find(item => item.param === paramName);
-    return config ? config.value : "Описание не найдено";
-}
+    const config = configObjectDesc.find((item) => item.param === paramName);
+    return config ? config.value : 'Описание не найдено';
+};
 
 const changeParamActive = (param, e) => {
     editableConfig.params.forEach((item) => {
@@ -477,7 +474,7 @@ const changeParamValue = (param, e) => {
 
 const changeConfigDesc = () => {
     editableConfig.desc = document.getElementById('editConfig-desc').value;
-}
+};
 
 const saveConfig = () => {
     fs.writeFileSync(
@@ -498,9 +495,9 @@ const saveConfig = () => {
 const selectConfig = (e) => {
     if (editableName.indexOf('.json') >= 0) {
         localStorage.setItem('config', editableName);
-        alert("Конфигурация выбрана");
+        alert('Конфигурация выбрана');
     }
-}
+};
 
 window.onload = () => {
     updateConfigList();

@@ -1,0 +1,79 @@
+@import url('../global/styles.css');
+
+.main {
+    background: linear-gradient(
+        0deg,
+        rgba(22, 22, 22, 0) 25%,
+        rgba(34, 34, 34, 0.5) 100%
+    );
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 0px 10px;
+
+    transition: all 400ms ease-in-out;
+}
+
+.main__header {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.main__control {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 80%;
+    cursor: pointer;
+}
+
+.main__control_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    height: 80%;
+    cursor: pointer;
+}
+
+.main__control > h1 {
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.navigation > button {
+    background-color: #303030;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+
+    white-space: nowrap;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.navigation > button:hover {
+    background-color: #3a3a3a;
+}

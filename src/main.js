@@ -1,9 +1,12 @@
 const { app, BrowserWindow, ipcMain, screen, Tray, Menu } = require('electron');
 const path = require('node:path');
+var platform = require("os").platform();
 
 let tray = undefined;
 let controlWindow = undefined;
 let settingsWindow = undefined;
+let setupWindow = undefined;
+
 
 
 const createWindows = () => {
@@ -61,6 +64,22 @@ const createWindows = () => {
   controlWindow.on('blur', () => {
     controlWindow.hide();
   });
+
+  setupWindow = new BrowserWindow({
+    width: 900,
+    height: 700,
+    show: false,
+    title: 'GoodbyeRKN | Первончальная настройка',
+    icon: path.join(__dirname, 'icon.ico'),
+    skipTaskbar: false,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    }
+  });
+  
+  //setupWindow.setMenu(null);
+  setupWindow.loadFile('./views/setup/index.html');
 };
 
 const makeError = () => {
@@ -107,4 +126,8 @@ ipcMain.on('openSettings', () => {
 
 ipcMain.on('makeError', () => {
   makeError();
+});
+
+ipcMain.on('startSetup', () => {
+  setupWindow.show();
 });

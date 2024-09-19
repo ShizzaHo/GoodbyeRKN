@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron ./src/main.js",
-    "build": "electron-packager ./src goodbyeRKN --platform=win32 --arch=x64"
+    "start": "electron ./src/main.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "electron": "^32.1.0",
-    "extract-zip": "^2.0.1",
     "tree-kill": "^1.2.2"
   },
   "devDependencies": {
