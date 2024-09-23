@@ -5,6 +5,13 @@ const { ipcRenderer } = require('electron');
 
 document.title = 'GoodbyeRKN';
 
+onload = () => {
+    if (localStorage.getItem('autorun') == 'true') {
+        handler.onClicksHandlers.toggleOnDPI();
+        reDrawState();
+    }
+};
+
 const togglePowerBtn = () => {
     if (dataStore.GoodByeDPI.pid == undefined) {
         handler.onClicksHandlers.toggleOnDPI();
@@ -13,8 +20,6 @@ const togglePowerBtn = () => {
     }
 
     reDrawState();
-
-    console.log(dataStore.GoodByeDPI.pid);
 };
 
 const reDrawState = () => {

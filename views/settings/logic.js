@@ -12,6 +12,7 @@ document.title = 'GoodbyeRKN | Настройки';
 
 onload = () => {
     checkAutostart();
+    checkAutorun();
 };
 
 const checkAutostart = () => {
@@ -33,6 +34,16 @@ const checkAutostart = () => {
         changeOnOffState(true, 'settings-autostart-toggle');
     } else {
         changeOnOffState(false, 'settings-autostart-toggle');
+    }
+}
+
+const checkAutorun = () => {
+    if (
+        localStorage.getItem('autorun') == 'true'
+    ) {
+        changeOnOffState(true, 'settings-autorun-toggle');
+    } else {
+        changeOnOffState(false, 'settings-autorun-toggle');
     }
 }
 
@@ -75,5 +86,12 @@ handler.registerNewClick(
     'settings-autostart',
     () => {handler.onClicksHandlers.toggleAutostart(() => {
         checkAutostart();
+    });}
+);
+
+handler.registerNewClick(
+    'settings-autorun',
+    () => {handler.onClicksHandlers.toggleAutorun(() => {
+        checkAutorun();
     });}
 );

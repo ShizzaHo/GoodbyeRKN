@@ -45,7 +45,7 @@ const createWindows = () => {
         },
     });
 
-    //settingsWindow.setMenu(null);
+    settingsWindow.setMenu(null);
     settingsWindow.loadFile('./views/settings/index.html');
 
     // Переопределение поведения кнопки закрытия окна настроек

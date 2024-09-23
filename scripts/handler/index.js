@@ -50,7 +50,7 @@ const onClicksHandlers = {
         const config = JSON.parse(fileContent);
 
         const appProcess = spawn(
-            'C:\\Users\\ShizzaHo\\Desktop\\GoodbyeRKN\\gbdpi\\x86_64\\goodbyedpi.exe',
+            path.join(ipcRenderer.sendSync('getAppPath').replace("GoodbyeRKN.exe", ""), 'gbdpi', 'goodbyedpi.exe'),
             generateAutoSpawnArgs(config),
             {
                 detached: false,
@@ -137,6 +137,15 @@ const onClicksHandlers = {
                     'GoodbyeRKN.lnk'
                 )
             );
+            callback();
+        }
+    },
+    toggleAutorun: (callback) => {
+        if (localStorage.getItem('autorun') == 'true') {
+            localStorage.setItem('autorun', 'false');
+            callback();
+        } else {
+            localStorage.setItem('autorun', 'true');
             callback();
         }
     },
