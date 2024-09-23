@@ -510,3 +510,7 @@ handler.registerNewClick('config-openFolder', openConfigFolder);
 handler.registerNewClick('editConfig-save', saveConfig);
 handler.registerNewChange('editConfig-desc', changeConfigDesc);
 handler.registerNewClick('config-selectConfig', selectConfig);
+
+module.exports = { 
+    configObjectTemplate: configObjectTemplate,
+}

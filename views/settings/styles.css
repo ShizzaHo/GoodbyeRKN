@@ -101,6 +101,12 @@
     text-shadow: 0px 0px 8px #00AF20;
 }
 
+.item__toggle_on {
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0px 0px 8px #0faf00;
+}
+
 .item__toggle_off {
     font-weight: 600;
     color: #fff;

@@ -1,20 +1,31 @@
 {
-  "name": "goodbyerkn",
-  "version": "1.0.0",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ./src/main.js",
-    "build": "electron-packager ./src goodbyeRKN --platform=win32 --arch=x64"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "electron": "^32.1.0",
-    "extract-zip": "^2.0.1",
-    "tree-kill": "^1.2.2"
-  },
-  "devDependencies": {
-    "electron-packager": "^17.1.2"
-  }
+    "name": "goodbyerkn",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ./main.js",
+        "build": "electron-builder build"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "electron-root-path": "^1.1.0",
+        "extract-zip": "^2.0.1",
+        "lnk": "^1.1.0",
+        "tree-kill": "^1.2.2"
+    },
+    "devDependencies": {
+        "electron": "^32.1.0",
+        "electron-builder": "^25.0.5"
+    },
+    "build": {
+        "productName": "GoodbyeRKN",
+        "compression": "maximum",
+        "forceCodeSigning": false,
+        "win": {
+            "icon": "./icon.ico",
+            "requestedExecutionLevel": "highestAvailable"
+        }
+    }
 }

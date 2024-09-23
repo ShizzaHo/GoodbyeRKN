@@ -45,6 +45,11 @@
     text-align: center;
 }
 
+.main__control p {
+    text-align: center;
+    width: 100%;
+}
+
 .footer {
     display: flex;
     justify-content: center;
